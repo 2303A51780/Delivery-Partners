@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Parcel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url('https://creativelogistics.com/wp-content/uploads/2021/05/AdobeStock_308981084_small-packages-768x384-1.jpeg') no-repeat center center/cover;
+            height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 115, 230, 0.8);
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+            transition: background 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background: #005bb5;
+            border-radius: 5px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .track-section {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 40%;
+        }
+
+        .track-section h2 {
+            font-size: 2rem;
+            color: #0073e6;
+            margin-bottom: 20px;
+        }
+
+        .track-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .track-section input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+
+        .track-section input[type="text"]:focus {
+            border-color: #0073e6;
+            outline: none;
+        }
+
+        .track-section button {
+            background: #0073e6;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .track-section button:hover {
+            background: #005bb5;
+        }
+
+        .map-section {
+            width: 60%;
+        }
+
+        .map-section h3 {
+            font-size: 1.5rem;
+            color: #cf5a33;
+            margin-bottom: 10px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .track-section, .map-section {
+                width: 100%;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Track Your Parcel</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="track.html">Track Parcel</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="track-section">
+            <h2>Enter Your Tracking ID</h2>
+            <form onsubmit="showMap(event)">
+                <input type="text" id="trackingId" placeholder="Tracking ID" required>
+                <button type="submit">Track</button>
+            </form>
+        </section>
+        <section class="map-section">
+            <h3 id="mapMessage" style="display: none;">Here is your parcel</h3>
+            <div id="mapContainer" class="map-container" style="display: none;">
+                <iframe id="mapFrame" src="" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Global Courier Service. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showMap(event) {
+            event.preventDefault();
+            const mapUrl = 'https://maps.google.com/maps?q=Hanamkonda+Head+Post+Office&output=embed';
+            const mapContainer = document.getElementById('mapContainer');
+            const mapFrame = document.getElementById('mapFrame');
+            const mapMessage = document.getElementById('mapMessage');
+            
+            mapFrame.src = mapUrl;
+            mapContainer.style.display = 'block';
+            mapMessage.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

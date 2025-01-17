@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Courier</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url('https://creativelogistics.com/wp-content/uploads/2021/05/AdobeStock_308981084_small-packages-768x384-1.jpeg') no-repeat center center/cover;
+            margin: 0;
+            height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 115, 230, 0.8);
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+            transition: background 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background: #005bb5;
+            border-radius: 5px;
+        }
+
+        /* Main Content Styles */
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Courier Form Styles */
+        .courier-form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .courier-form h2 {
+            font-size: 2rem;
+            color: #0073e6;
+            margin-bottom: 20px;
+        }
+
+        .courier-form input[type="text"], .courier-form input[type="number"], .courier-form textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        .courier-form input[type="text"]:focus, .courier-form input[type="number"]:focus, .courier-form textarea:focus {
+            border-color: #0073e6;
+            outline: none;
+        }
+
+        .courier-form button {
+            background: #0073e6;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .courier-form button:hover {
+            background: #005bb5;
+        }
+
+        /* Thank You Message */
+        .thank-you-message {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.5rem;
+            color: #0073e6;
+        }
+
+        .thank-you-message a {
+            display: inline-block;
+            margin-top: 20px;
+            background: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .thank-you-message a:hover {
+            background: #005bb5;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Delivery Courier</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="track.html">Track Parcel</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="courier-form">
+            <h2>Enter Delivery Details</h2>
+            <form id="courierForm">
+                <label for="fromAddress">From Address</label>
+                <input type="text" id="fromAddress" placeholder="Enter sender's address" required>
+
+                <label for="toAddress">To Address</label>
+                <input type="text" id="toAddress" placeholder="Enter recipient's address" required>
+
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" placeholder="Enter weight" required>
+
+                <label for="items">Items in Parcel</label>
+                <textarea id="items" placeholder="Describe items in the parcel" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="thankYouMessage" class="thank-you-message" style="display:none;">
+                <p>Order received! Your tracking ID is: <strong id="trackingId"></strong></p>
+                <p>More details will be updated via email.</p>
+                <a href="index.html">Back Home</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Global Courier Service. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('courierForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const trackingId = 'TRK' + Math.floor(100000 + Math.random() * 900000);
+
+            this.reset();
+
+            document.getElementById('courierForm').style.display = 'none'; 
+            document.getElementById('thankYouMessage').style.display = 'block'; 
+
+            document.getElementById('trackingId').textContent = trackingId;
+        });
+    </script>
+</body>
+</html>

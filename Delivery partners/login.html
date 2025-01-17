@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* General Styles */
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: url('https://creativelogistics.com/wp-content/uploads/2021/05/AdobeStock_308981084_small-packages-768x384-1.jpeg') no-repeat center center/cover; /* Background image added */
+    margin: 0;
+    height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background: rgba(0, 115, 230, 0.8); /* Transparent background for the header */
+    color: #fff;
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background: #005bb5;
+    border-radius: 5px;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px); /* Ensures the form is vertically centered */
+}
+
+.login-section {
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-section h2 {
+    font-size: 2rem;
+    color: #0073e6;
+    margin-bottom: 20px;
+}
+
+.login-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-section input[type="email"],
+.login-section input[type="password"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.login-section input[type="email"]:focus,
+.login-section input[type="password"]:focus {
+    border-color: #0073e6;
+    outline: none;
+}
+
+.login-section button {
+    background: #0073e6;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-section button:hover {
+    background: #005bb5;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .login-section {
+        padding: 20px;
+    }
+
+    .login-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .login-section input[type="email"],
+    .login-section input[type="password"] {
+        font-size: 0.9rem;
+    }
+
+    .login-section button {
+        font-size: 0.9rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Login</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="track.html">Track Parcel</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="login-section">
+            <h2>Sign In to Your Account</h2>
+            <form action="index.html" method="get">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Global Courier Service. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
